@@ -99,14 +99,14 @@ java -jar target/assignment2.jar path/to/config.json
 Make sure to run on a UNIX machine.
 
 🔍 Coordinate Transformation
-Sensor data from LiDAR is in the robot’s local frame and must be converted to the global frame:
 
-## 🧮 Formula
+## Sensor data from LiDAR is in the robot’s local frame and must be converted to the global frame: 🧮 Formula
+```text
 double yawRad = Math.toRadians(yaw);
 double x_global = Math.cos(yawRad) * x_local - Math.sin(yawRad) * y_local + robot_x;
 double y_global = Math.sin(yawRad) * x_local + Math.cos(yawRad) * y_local + robot_y;
 Used to rotate and translate cloud points based on the robot's pose at detection time.
-
+```
 ## 📚 Libraries Used
 GSON – for parsing JSON
 
