@@ -85,16 +85,16 @@ To run tests:
 mvn test
 ```
 
-##🧱 Build and Run Instructions
+## 🧱 Build and Run Instructions
 
 ✅ Prerequisites
 Java 8+
 Maven
 
-##📦 Build
+# 📦 Build
 mvn clean install
 
-##▶️ Run
+# ▶️ Run
 bash
 Copy
 Edit
@@ -104,7 +104,7 @@ Make sure to run on a CS Lab UNIX machine for compatibility with grading.
 🔍 Coordinate Transformation
 Sensor data from LiDAR is in the robot’s local frame and must be converted to the global frame:
 
-🧮 Formula
+# 🧮 Formula
 java
 Copy
 Edit
@@ -113,14 +113,15 @@ double x_global = Math.cos(yawRad) * x_local - Math.sin(yawRad) * y_local + robo
 double y_global = Math.sin(yawRad) * x_local + Math.cos(yawRad) * y_local + robot_y;
 Used to rotate and translate cloud points based on the robot's pose at detection time.
 
-📚 Libraries Used
+## 📚 Libraries Used
 GSON – for parsing JSON
 
 JUnit 5 – for testing
 
-👨‍💻 Authors
+## 👨‍💻 Authors
 [Roei Yosef]
 
+## 
 Course: SPL225 – Systems Programming Lab
 Institution: Ben-Gurion University of the Negev
 Year: 2025
