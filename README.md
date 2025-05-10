@@ -91,10 +91,10 @@ mvn test
 Java 8+
 Maven
 
-# 📦 Build
+## 📦 Build
 mvn clean install
 
-# ▶️ Run
+## ▶️ Run
 bash
 Copy
 Edit
@@ -104,7 +104,7 @@ Make sure to run on a CS Lab UNIX machine for compatibility with grading.
 🔍 Coordinate Transformation
 Sensor data from LiDAR is in the robot’s local frame and must be converted to the global frame:
 
-# 🧮 Formula
+## 🧮 Formula
 java
 Copy
 Edit
