@@ -84,18 +84,17 @@ To run tests:
 ```bash
 mvn test
 ```
-🧱 Build and Run Instructions
+
+##🧱 Build and Run Instructions
+
 ✅ Prerequisites
 Java 8+
-
 Maven
 
-📦 Build
-bash
-Copy
-Edit
+##📦 Build
 mvn clean install
-▶️ Run
+
+##▶️ Run
 bash
 Copy
 Edit
