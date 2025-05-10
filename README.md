@@ -27,22 +27,24 @@ This project was implemented as part of the SPL225 course at Ben-Gurion Universi
 
 ## 📁 Project Structure
 
+```text
 .
 ├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── bgu/spl/mics/ # MicroServices framework
-│ │ │ └── bgu/spl/components/ # Camera, LiDAR, FusionSLAM, etc.
-│ │ │ └── bgu/spl/messages/ # Events and Broadcasts
-│ │ │ └── bgu/spl/util/ # Utility classes (Pose, Landmark, etc.)
-│ └── test/
-│ └── java/
-│ └── bgu/spl/tests/ # JUnit test classes
-├── pom.xml # Maven configuration
+│   ├── main/
+│   │   └── java/
+│   │       └── bgu/spl/mics/         # MicroServices framework
+│   │       └── bgu/spl/components/   # Camera, LiDAR, FusionSLAM, etc.
+│   │       └── bgu/spl/messages/     # Events and Broadcasts
+│   │       └── bgu/spl/util/         # Utility classes (Pose, Landmark, etc.)
+│
+│   └── test/
+│       └── java/
+│           └── bgu/spl/tests/        # JUnit test classes
+│
+├── pom.xml                           # Maven configuration
+```
 
-markdown
-Copy
-Edit
+ 
 
 ## 📦 Input Files
 
