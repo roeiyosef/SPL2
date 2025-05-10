@@ -71,16 +71,17 @@ A single `output_file.json` is generated, including:
 
 ## 🧪 Testing
 
-Unit tests were written using **JUnit** for:
+Unit tests are implemented using **JUnit 5** for:
 
-- `MessageBusImpl`
-- Camera and LiDAR services
-- SLAM fusion calculations
+- `MessageBusImpl` (thread-safe event handling)
+- Camera/LiDAR services (data prep)
+- FusionSLAM (coordinate transformation logic)
 
 To run tests:
 
 ```bash
 mvn test
+```
 🧱 Build and Run Instructions
 ✅ Prerequisites
 Java 8+
@@ -97,30 +98,28 @@ bash
 Copy
 Edit
 java -jar target/assignment2.jar path/to/config.json
+Make sure to run on a CS Lab UNIX machine for compatibility with grading.
+
 🔍 Coordinate Transformation
-LiDAR data is initially in the robot’s local frame and must be converted to global coordinates using the robot's pose (x, y, yaw). The transformation includes:
+Sensor data from LiDAR is in the robot’s local frame and must be converted to the global frame:
 
-Rotation by yaw
-
-Translation by the robot’s position
-
+🧮 Formula
 java
 Copy
 Edit
-double x_global = cos(yaw) * x_local - sin(yaw) * y_local + robot_x;
-double y_global = sin(yaw) * x_local + cos(yaw) * y_local + robot_y;
-For more details, see Appendix B in the provided documents.
+double yawRad = Math.toRadians(yaw);
+double x_global = Math.cos(yawRad) * x_local - Math.sin(yawRad) * y_local + robot_x;
+double y_global = Math.sin(yawRad) * x_local + Math.cos(yawRad) * y_local + robot_y;
+Used to rotate and translate cloud points based on the robot's pose at detection time.
 
 📚 Libraries Used
-GSON - JSON serialization/deserialization
+GSON – for parsing JSON
 
-JUnit 5 - Testing framework
+JUnit 5 – for testing
 
-🧑‍💻 Authors
-[Your Name]
+👨‍💻 Authors
+[Roei Yosef]
 
-[Partner's Name (if any)]
-
-Course: SPL225 - Systems Programming Lab
-Institution: Ben-Gurion University
+Course: SPL225 – Systems Programming Lab
+Institution: Ben-Gurion University of the Negev
 Year: 2025
